@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://wireframesketcher.com/1.0/model.ecore">
+  <widgets xsi:type="model:Window" id="1" x="32" y="32" width="689" height="497" text="Window" measuredWidth="689" measuredHeight="497" minimizeButton="true" maximizeButton="true"/>
+  <widgets xsi:type="model:Button" id="3" x="296" y="91" text="    Meu Perfil  " measuredWidth="111" measuredHeight="30" style="round">
+    <font size="15px"/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="4" x="432" y="91" width="113" text="    Ranking   " measuredWidth="113" measuredHeight="30" style="round">
+    <font size="15px"/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="5" x="559" y="91" text="Próximos Eventos" measuredWidth="136" measuredHeight="30" style="round">
+    <font size="15px"/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="6" x="72" y="72" text="Senai" measuredWidth="114" measuredHeight="67">
+    <font size="43px" bold="true"/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="7" x="185" y="104" text="Educando" measuredWidth="82" measuredHeight="29" foreground="#999999">
+    <font size="16px" bold="true"/>
+  </widgets>
+  <widgets xsi:type="model:Image" id="8" x="72" y="192" width="143" height="177" measuredWidth="143" measuredHeight="177"/>
+  <widgets xsi:type="model:Label" id="9" x="256" y="184" text="Nome do Fulano" measuredWidth="256" measuredHeight="53">
+    <font size="32px" bold="true"/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="10" x="266" y="236" width="203" text="Pontos : 21452416532 " measuredWidth="203" measuredHeight="29">
+    <font size="16px" bold="false" italic="true"/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="11" x="266" y="266" text="Email : " measuredWidth="56" measuredHeight="29">
+    <font size="16px" italic="true"/>
+  </widgets>
+  <widgets xsi:type="model:Link" id="12" x="321" y="266" text="bruninhobom_bruninhobom@gmail.com" measuredWidth="290" measuredHeight="29">
+    <font size="16px" italic="true"/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="13" x="266" y="294" text="Turma:" measuredWidth="55" measuredHeight="29">
+    <font size="16px" italic="true"/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="14" x="320" y="294" text="Turma do Fulano" measuredWidth="124" measuredHeight="29">
+    <font size="16px"/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="15" x="266" y="322" text="Ranking:" measuredWidth="66" measuredHeight="29">
+    <font size="16px" italic="true"/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="16" x="331" y="325" text="1º" measuredWidth="22" measuredHeight="29">
+    <font size="16px" italic="true"/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="17" x="328" y="515" measuredWidth="6" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="19" x="214" y="493" text="© Grupo de Desenvolvimento de Situação de Aprendizagem 2014" measuredWidth="351" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="20" x="104" y="392" text="Alterar Foto" measuredWidth="82" measuredHeight="25" style="round">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="22" x="266" y="350" text="CPF : 098.765.747-98" measuredWidth="143" measuredHeight="28">
+    <font size="15px" italic="true"/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="23" x="280" y="388" measuredWidth="6" measuredHeight="23">
+    <font/>
+  </widgets>
+  <hRuler/>
+  <vRuler/>
+  <font size="12px"/>
+</model:Screen>

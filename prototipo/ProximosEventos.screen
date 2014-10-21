@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://wireframesketcher.com/1.0/model.ecore">
+  <widgets xsi:type="model:Window" id="1" x="24" y="24" width="657" height="505" text="Proximos Eventos" measuredWidth="657" measuredHeight="505" verticalScrollbar="true" minimizeButton="true" maximizeButton="true"/>
+  <widgets xsi:type="model:Button" id="3" x="258" y="72" text="    Meu Perfil  " measuredWidth="111" measuredHeight="30" style="round">
+    <font size="15px"/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="4" x="394" y="72" width="113" text="    Ranking   " measuredWidth="113" measuredHeight="30" style="round">
+    <font size="15px"/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="5" x="521" y="72" text="Próximos Eventos" measuredWidth="136" measuredHeight="30" style="round">
+    <font size="15px"/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="6" x="34" y="53" text="Senai" measuredWidth="114" measuredHeight="67">
+    <font size="43px" bold="true"/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="7" x="147" y="85" text="Educando" measuredWidth="82" measuredHeight="29" foreground="#999999">
+    <font size="16px" bold="true"/>
+  </widgets>
+  <widgets xsi:type="model:Table" id="9" x="64" y="152" width="561" height="329" text="Nome da Palestra, Hora de Inicio , Hora de Término ,  Pontos&#xD;&#xA;Dispositivos Móveis,20:30:00,24:30:00,540&#xD;&#xA;, , &#xD;&#xA;,,&#xD;&#xA;,,&#xD;&#xA;,,&#xD;&#xA;,,&#xD;&#xA;,,&#xD;&#xA;, , &#xD;&#xA;,,&#xD;&#xA;,,&#xD;&#xA;,,&#xD;&#xA;,,&#xD;&#xA;,,&#xD;&#xA;, , &#xD;&#xA;,,&#xD;&#xA;,,&#xD;&#xA;,,&#xD;&#xA;,,&#xD;&#xA;,,&#xD;&#xA;" measuredWidth="561" measuredHeight="329" verticalScrollbar="true" alternative="#eeeeee">
+    <font/>
+  </widgets>
+  <hRuler/>
+  <vRuler/>
+  <font size="12px"/>
+</model:Screen>

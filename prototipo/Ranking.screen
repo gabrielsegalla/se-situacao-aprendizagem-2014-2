@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://wireframesketcher.com/1.0/model.ecore">
+  <widgets xsi:type="model:Window" id="1" x="32" y="48" width="641" height="513" text="Ranking" measuredWidth="641" measuredHeight="513" minimizeButton="true" maximizeButton="true"/>
+  <widgets xsi:type="model:Table" id="2" x="208" y="222" height="321" text="Nome,Pontos, Posição&#xA;Gabriel Rodrigues Segalla,3217382783, 1º&#xA;Fulano1,327643,2º&#xA;Fulano2,23456,3º&#xA;Fulano3,12345,4º&#xA;Fulano4,9012,5º&#xA;Fulano5,8901,6º&#xA;Fulano6,7890,7º&#xA;Fulano7,6789,8º&#xA;Fulano8,5678,9º&#xA;Fulano9,4567,10º&#xA;Fulano10,3456,11º&#xA;Fulano11,2345,12º&#xA;Fulano12,1234,13º&#xA;Fulano13,900,14º&#xA;Fulano14,789,15º&#xA;Fulano15,678,16º&#xA;Fulano16,567,17º&#xA;Fulano17,546,18º&#xA;Fulano18,54,19º&#xA;Fulano19,32,20º&#xA;Fulano20,11,21º&#xA;Fulano21, 0,22º" measuredWidth="267" measuredHeight="321" alternative="#eeeeee">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="3" x="10" y="10" text="Fulano,327643,2º" measuredWidth="95" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Shape" id="7" x="64" y="179" measuredWidth="100" measuredHeight="100" shapeType="star">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Shape" id="8" x="512" y="179" measuredWidth="100" measuredHeight="100" shapeType="star">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="12" x="266" y="96" text="    Meu Perfil  " measuredWidth="111" measuredHeight="30" style="round">
+    <font size="15px"/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="13" x="402" y="96" width="113" text="    Ranking   " measuredWidth="113" measuredHeight="30" style="round">
+    <font size="15px"/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="14" x="529" y="96" text="Próximos Eventos" measuredWidth="136" measuredHeight="30" style="round">
+    <font size="15px"/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="15" x="42" y="77" text="Senai" measuredWidth="114" measuredHeight="67">
+    <font size="43px" bold="true"/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="16" x="155" y="109" text="Educando" measuredWidth="82" measuredHeight="29" foreground="#999999">
+    <font size="16px" bold="true"/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="17" x="289" y="168" text="Ranking" measuredWidth="114" measuredHeight="46">
+    <font size="28px" bold="true"/>
+  </widgets>
+  <hRuler/>
+  <vRuler/>
+  <font size="12px"/>
+</model:Screen>
