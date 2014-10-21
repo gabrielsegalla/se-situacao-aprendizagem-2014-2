@@ -67,6 +67,9 @@ public class CadastroEventos extends JFrame {
 		JButton btnNewButton = new JButton("Eventos");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				ProximosEventos pe = new ProximosEventos();
+				pe.setVisible(true);
+				dispose();
 			}
 		});
 		btnNewButton.setBounds(10, 64, 118, 30);
@@ -75,22 +78,18 @@ public class CadastroEventos extends JFrame {
 		JButton btnNewButton_1 = new JButton("Ranking");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				Ranking ranking = new Ranking();
+				ranking.setVisible(true);
+				dispose();
 			}
 		});
 		btnNewButton_1.setBounds(138, 64, 124, 30);
 		contentPane.add(btnNewButton_1);
 
-		JButton btnNewButton_3 = new JButton("Cadastro Eventos");
-		btnNewButton_3.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-			}
-		});
-		btnNewButton_3.setBounds(272, 23, 161, 30);
-		contentPane.add(btnNewButton_3);
-
 		JButton btnNewButton_4 = new JButton("Cadastro Pontos");
 		btnNewButton_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				
 			}
 		});
 		btnNewButton_4.setBounds(272, 64, 161, 30);

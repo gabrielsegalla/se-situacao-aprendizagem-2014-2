@@ -52,10 +52,6 @@ public class ProximosEventos extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		JButton btnEventos = new JButton("Eventos");
-		btnEventos.setBounds(403, 19, 156, 23);
-		contentPane.add(btnEventos);
-
 		JButton button_1 = new JButton("Ranking\r\n");
 		button_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -69,6 +65,13 @@ public class ProximosEventos extends JFrame {
 		contentPane.add(button_1);
 
 		JButton button_2 = new JButton("Meu Perfil\r\n");
+		button_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				TelaUsuario tu = new TelaUsuario();
+				tu.setVisible(true);
+				dispose();
+			}
+		});
 		button_2.setBounds(201, 19, 91, 23);
 		contentPane.add(button_2);
 

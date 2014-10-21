@@ -59,20 +59,25 @@ public class TelaUsuario extends JFrame {
 		lblEducando.setBounds(107, 39, 64, 14);
 		contentPane.add(lblEducando);
 
-		JButton btnPerfil = new JButton("Perfil");
-		btnPerfil.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-
+		JButton btnEventos = new JButton("Eventos");
+		btnEventos.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ProximosEventos pe = new ProximosEventos();
+				pe.setVisible(true);
+				dispose();
 			}
 		});
-		btnPerfil.setBounds(171, 35, 87, 23);
-		contentPane.add(btnPerfil);
-
-		JButton btnEventos = new JButton("Eventos");
 		btnEventos.setBounds(345, 35, 87, 23);
 		contentPane.add(btnEventos);
 
 		JButton btnRanking = new JButton("Ranking");
+		btnRanking.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				Ranking ranking = new Ranking();
+				ranking.setVisible(true);
+				dispose();
+			}
+		});
 		btnRanking.setBounds(258, 35, 87, 23);
 		contentPane.add(btnRanking);
 

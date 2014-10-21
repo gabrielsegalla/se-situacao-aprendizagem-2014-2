@@ -64,14 +64,13 @@ public class Ranking extends JFrame {
 		JButton btnNewButton = new JButton("Meu Perfil\r\n");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				TelaUsuario tu = new TelaUsuario();
+				tu.setVisible(true);
+				dispose();
 			}
 		});
 		btnNewButton.setBounds(195, 24, 91, 23);
 		contentPane.add(btnNewButton);
-
-		JButton btnNewButton_1 = new JButton("Ranking\r\n");
-		btnNewButton_1.setBounds(296, 24, 91, 23);
-		contentPane.add(btnNewButton_1);
 
 		JButton btnNewButton_2 = new JButton("Pr\u00F3ximos Eventos\r\n");
 		btnNewButton_2.addActionListener(new ActionListener() {
@@ -83,7 +82,7 @@ public class Ranking extends JFrame {
 
 			}
 		});
-		btnNewButton_2.setBounds(397, 24, 156, 23);
+		btnNewButton_2.setBounds(296, 24, 156, 23);
 		contentPane.add(btnNewButton_2);
 
 		JLabel lblRanking = new JLabel("Ranking");
