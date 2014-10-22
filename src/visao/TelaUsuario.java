@@ -83,7 +83,7 @@ public class TelaUsuario extends JFrame {
 		
 		JLabel lblMeuPerfil = new JLabel("Meu Perfil");
 		lblMeuPerfil.setFont(new Font("Bebas Neue", Font.PLAIN, 30));
-		lblMeuPerfil.setBounds(10, 11, 128, 34);
+		lblMeuPerfil.setBounds(10, 11, 166, 34);
 		panel.add(lblMeuPerfil);
 		
 		JLabel lblNome = new JLabel("Nome:");
