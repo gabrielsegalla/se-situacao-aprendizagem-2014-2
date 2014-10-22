@@ -86,7 +86,7 @@ public class ProximosEventos extends JFrame {
 		contentPane.add(label_1);
 
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(68, 174, 491, 181);
+		scrollPane.setBounds(108, 192, 491, 181);
 		contentPane.add(scrollPane);
 
 		table = new JTable();
@@ -104,7 +104,7 @@ public class ProximosEventos extends JFrame {
 
 		JLabel lblEventos = new JLabel("Eventos");
 		lblEventos.setFont(new Font("Code Light", Font.PLAIN, 30));
-		lblEventos.setBounds(232, 84, 186, 70);
+		lblEventos.setBounds(272, 102, 186, 70);
 		contentPane.add(lblEventos);
 	}
 }
