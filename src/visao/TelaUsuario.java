@@ -57,6 +57,7 @@ public class TelaUsuario extends JFrame {
 	 * Create the frame.
 	 */
 	public TelaUsuario() {
+		setResizable(false);
 		setTitle("SENAI EDUCANDO");
 		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Gabriel Segalla\\git\\se-situacao-aprendizagem-2014-2\\Imagens\\iCON.png"));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -149,7 +150,7 @@ public class TelaUsuario extends JFrame {
 		
 		JLabel label_7 = new JLabel("");
 		label_7.setIcon(new ImageIcon("C:\\Users\\Gabriel Segalla\\git\\se-situacao-aprendizagem-2014-2\\Imagens\\extra Perfil.png"));
-		label_7.setBounds(-14, -557, 1195, 1370);
+		label_7.setBounds(-44, -603, 1227, 1472);
 		panel.add(label_7);
 		
 		JPanel panel_1 = new JPanel();
@@ -259,6 +260,17 @@ public class TelaUsuario extends JFrame {
 		table_1.getColumnModel().getColumn(3).setPreferredWidth(95);
 		scrollPane_1.setViewportView(table_1);
 		
+		JLabel label_10 = new JLabel("EVENTOS");
+		label_10.setForeground(Color.ORANGE);
+		label_10.setFont(new Font("Bebas Neue", Font.PLAIN, 44));
+		label_10.setBounds(252, 25, 142, 44);
+		panel_2.add(label_10);
+		
+		JLabel lblEventos = new JLabel("EVENTOS");
+		lblEventos.setFont(new Font("Bebas Neue", Font.PLAIN, 44));
+		lblEventos.setBounds(249, 24, 142, 44);
+		panel_2.add(lblEventos);
+		
 		JLabel label_6 = new JLabel("");
 		label_6.setIcon(new ImageIcon("C:\\Users\\Gabriel Segalla\\git\\se-situacao-aprendizagem-2014-2\\Imagens\\extra evento.png"));
 		label_6.setBounds(-26, 0, 716, 480);
@@ -278,7 +290,7 @@ public class TelaUsuario extends JFrame {
 		
 		JLabel label_4 = new JLabel("");
 		label_4.setIcon(new ImageIcon("C:\\Users\\Gabriel Segalla\\git\\se-situacao-aprendizagem-2014-2\\Imagens\\P.ICON.png"));
-		label_4.setBounds(0, -17, 146, 116);
+		label_4.setBounds(0, -23, 146, 116);
 		contentPane.add(label_4);
 		
 		JLabel label_3 = new JLabel("");
