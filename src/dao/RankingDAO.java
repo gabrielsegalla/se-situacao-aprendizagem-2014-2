@@ -1,6 +1,6 @@
 package dao;
 
-import Modelo.RankingModelo;
+import modelo.RankingModelo;
 
 
 public interface RankingDAO extends DAO<RankingModelo> {
