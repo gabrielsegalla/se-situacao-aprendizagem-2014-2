@@ -36,6 +36,7 @@ public class TelaUsuario extends JFrame {
 	private JTextField textField_6;
 	private JTable table;
 	private JTable table_1;
+	
 
 	/**
 	 * Launch the application.
@@ -159,6 +160,10 @@ public class TelaUsuario extends JFrame {
 		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(24, 73, 615, 239);
+		contentPane.add(scrollPane);
+		
+		/*table = new JTable(tableModel);*/
+		
 		panel_1.add(scrollPane);
 		
 		table = new JTable();
@@ -263,7 +268,7 @@ public class TelaUsuario extends JFrame {
 		JLabel label_10 = new JLabel("EVENTOS");
 		label_10.setForeground(Color.ORANGE);
 		label_10.setFont(new Font("Bebas Neue", Font.PLAIN, 44));
-		label_10.setBounds(252, 25, 142, 44);
+		label_10.setBounds(252, 25, 258, 44);
 		panel_2.add(label_10);
 		
 		JLabel lblEventos = new JLabel("EVENTOS");

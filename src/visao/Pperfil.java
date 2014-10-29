@@ -33,7 +33,6 @@ public class Pperfil extends JFrame {
 	private JTextField textField_5;
 	private JTextField textField_1;
 	private JTextField textField_6;
-	private JTable table;
 	private JTextField textField_7;
 	private JTextField textField_8;
 	private JTextField textField_9;
@@ -41,6 +40,12 @@ public class Pperfil extends JFrame {
 	private JTextField textField_11;
 	private JTable table_1;
 	private JTable table_2;
+	private DefaultTableModel tableModel = new DefaultTableModel();
+	private DefaultTableModel tableModel_1 = new DefaultTableModel();
+	private DefaultTableModel tableModel_2 = new DefaultTableModel();
+	private JTable table;
+
+
 
 	/**
 	 * Launch the application.
@@ -155,37 +160,23 @@ public class Pperfil extends JFrame {
 		panel.setLayout(null);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(30, 73, 615, 239);
-		panel.add(scrollPane);
+		scrollPane.setBounds(30, 69, 615, 239);
+		contentPane.add(scrollPane);
 		
-		table_2 = new JTable();
-		table_2.setModel(new DefaultTableModel(
-			new Object[][] {
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-			},
-			new String[] {
-				"Nome", "Pontos", "Posi\u00E7\u00E3o"
-			}
-		));
+		tableModel.addColumn("Nome");
+		tableModel.addColumn("Pontos");
+		tableModel.addColumn("Posição");
+		
+		table_2 = new JTable(tableModel);
+		table_2.getColumnModel().getColumn(0).getPreferredWidth();
+		table_2.getColumnModel().getColumn(0).setResizable(false);
+		table_2.getColumnModel().getColumn(1).getPreferredWidth();
+		table_2.getColumnModel().getColumn(1).setResizable(false);
+		table_2.getColumnModel().getColumn(2).getPreferredWidth();
+		table_2.getColumnModel().getColumn(2).setResizable(false);
+
 		scrollPane.setViewportView(table_2);
+		
 		
 		JLabel label_5 = new JLabel("Nome:");
 		label_5.setBounds(174, 335, 46, 14);
@@ -212,10 +203,32 @@ public class Pperfil extends JFrame {
 		
 		JScrollPane scrollPane_1 = new JScrollPane();
 		scrollPane_1.setBounds(31, 101, 594, 237);
-		panel_2.add(scrollPane_1);
+		contentPane.add(scrollPane_1);
 		
-		table_1 = new JTable();
-		table_1.setModel(new DefaultTableModel(
+		tableModel_1.addColumn("Nome");
+		tableModel_1.addColumn("Data");
+		tableModel_1.addColumn("Inicio");
+		tableModel_1.addColumn("Finalizacão");
+		tableModel_1.addColumn("Pontos");
+		
+		table_1 = new JTable(tableModel_1);
+		table_1.getColumnModel().getColumn(0).getPreferredWidth();
+		table_1.getColumnModel().getColumn(0).setResizable(false);
+		table_1.getColumnModel().getColumn(1).getPreferredWidth();
+		table_1.getColumnModel().getColumn(1).setResizable(false);
+		table_1.getColumnModel().getColumn(2).getPreferredWidth();
+		table_1.getColumnModel().getColumn(2).setResizable(false);
+		table_1.getColumnModel().getColumn(3).getPreferredWidth();
+		table_1.getColumnModel().getColumn(3).setResizable(false);
+		table_1.getColumnModel().getColumn(4).getPreferredWidth();
+		table_1.getColumnModel().getColumn(4).setResizable(false);
+
+		
+
+
+		
+		
+		/*table_1.setModel(new DefaultTableModel(
 			new Object[][] {
 				{null, null, null, null, null},
 				{null, null, null, null, null},
@@ -242,7 +255,7 @@ public class Pperfil extends JFrame {
 			new String[] {
 				"Nome", "Data", "Inicio", "Finaliza\u00E7\u00E3o", "Pontos"
 			}
-		));
+		));*/
 		scrollPane_1.setViewportView(table_1);
 		
 		JLabel label_13 = new JLabel("EVENTOS");
@@ -344,33 +357,13 @@ public class Pperfil extends JFrame {
 		
 		JScrollPane scrollPane_2 = new JScrollPane();
 		scrollPane_2.setBounds(20, 130, 336, 235);
-		panel_4.add(scrollPane_2);
+		contentPane.add(scrollPane_2);
 		
-		table = new JTable();
-		table.setModel(new DefaultTableModel(
-			new Object[][] {
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-			},
-			new String[] {
-				"Nome", "Hora de Entrada", "Hora de Saida"
-			}
-		));
-		table.getColumnModel().getColumn(1).setPreferredWidth(107);
-		table.getColumnModel().getColumn(2).setPreferredWidth(107);
+		tableModel_2.addColumn("");
+		
+		
+		
+		table = new JTable(tableModel_2);
 		scrollPane_2.setViewportView(table);
 		
 		JButton btnFinalizar = new JButton("Finalizar");
