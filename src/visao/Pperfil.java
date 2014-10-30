@@ -38,12 +38,9 @@ public class Pperfil extends JFrame {
 	private JTextField textField_9;
 	private JTextField textField_10;
 	private JTextField textField_11;
-	private JTable table_1;
-	private JTable table_2;
 	private DefaultTableModel tableModel = new DefaultTableModel();
 	private DefaultTableModel tableModel_1 = new DefaultTableModel();
 	private DefaultTableModel tableModel_2 = new DefaultTableModel();
-	private JTable table;
 
 
 
@@ -159,24 +156,6 @@ public class Pperfil extends JFrame {
 		tabbedPane.addTab("Ranking", null, panel, null);
 		panel.setLayout(null);
 		
-		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(30, 69, 615, 239);
-		contentPane.add(scrollPane);
-		
-		tableModel.addColumn("Nome");
-		tableModel.addColumn("Pontos");
-		tableModel.addColumn("Posição");
-		
-		table_2 = new JTable(tableModel);
-		table_2.getColumnModel().getColumn(0).getPreferredWidth();
-		table_2.getColumnModel().getColumn(0).setResizable(false);
-		table_2.getColumnModel().getColumn(1).getPreferredWidth();
-		table_2.getColumnModel().getColumn(1).setResizable(false);
-		table_2.getColumnModel().getColumn(2).getPreferredWidth();
-		table_2.getColumnModel().getColumn(2).setResizable(false);
-
-		scrollPane.setViewportView(table_2);
-		
 		
 		JLabel label_5 = new JLabel("Nome:");
 		label_5.setBounds(174, 335, 46, 14);
@@ -200,63 +179,6 @@ public class Pperfil extends JFrame {
 		JPanel panel_2 = new JPanel();
 		tabbedPane.addTab("Eventos", null, panel_2, null);
 		panel_2.setLayout(null);
-		
-		JScrollPane scrollPane_1 = new JScrollPane();
-		scrollPane_1.setBounds(31, 101, 594, 237);
-		contentPane.add(scrollPane_1);
-		
-		tableModel_1.addColumn("Nome");
-		tableModel_1.addColumn("Data");
-		tableModel_1.addColumn("Inicio");
-		tableModel_1.addColumn("Finalizacão");
-		tableModel_1.addColumn("Pontos");
-		
-		table_1 = new JTable(tableModel_1);
-		table_1.getColumnModel().getColumn(0).getPreferredWidth();
-		table_1.getColumnModel().getColumn(0).setResizable(false);
-		table_1.getColumnModel().getColumn(1).getPreferredWidth();
-		table_1.getColumnModel().getColumn(1).setResizable(false);
-		table_1.getColumnModel().getColumn(2).getPreferredWidth();
-		table_1.getColumnModel().getColumn(2).setResizable(false);
-		table_1.getColumnModel().getColumn(3).getPreferredWidth();
-		table_1.getColumnModel().getColumn(3).setResizable(false);
-		table_1.getColumnModel().getColumn(4).getPreferredWidth();
-		table_1.getColumnModel().getColumn(4).setResizable(false);
-
-		
-
-
-		
-		
-		/*table_1.setModel(new DefaultTableModel(
-			new Object[][] {
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-			},
-			new String[] {
-				"Nome", "Data", "Inicio", "Finaliza\u00E7\u00E3o", "Pontos"
-			}
-		));*/
-		scrollPane_1.setViewportView(table_1);
 		
 		JLabel label_13 = new JLabel("EVENTOS");
 		label_13.setFont(new Font("Bebas Neue", Font.PLAIN, 47));
@@ -355,17 +277,6 @@ public class Pperfil extends JFrame {
 		lblEvento.setBounds(10, 64, 84, 20);
 		panel_4.add(lblEvento);
 		
-		JScrollPane scrollPane_2 = new JScrollPane();
-		scrollPane_2.setBounds(20, 130, 336, 235);
-		contentPane.add(scrollPane_2);
-		
-		tableModel_2.addColumn("");
-		
-		
-		
-		table = new JTable(tableModel_2);
-		scrollPane_2.setViewportView(table);
-		
 		JButton btnFinalizar = new JButton("Finalizar");
 		btnFinalizar.setBounds(567, 365, 89, 23);
 		panel_4.add(btnFinalizar);
@@ -435,11 +346,61 @@ public class Pperfil extends JFrame {
 		lblCadastroDeEvento.setBounds(10, 11, 376, 39);
 		panel_5.add(lblCadastroDeEvento);
 		
+		tableModel.addColumn("Nome");
+		tableModel.addColumn("Pontos");
+		tableModel.addColumn("Posição");
+		
+		tableModel_1.addColumn("Nome");
+		tableModel_1.addColumn("Data");
+		tableModel_1.addColumn("Inicio");
+		tableModel_1.addColumn("Finalizacão");
+		tableModel_1.addColumn("Pontos");
+		
+		
+		
+		
+
+		
+
+
+		
+		
+		/*table_1.setModel(new DefaultTableModel(
+			new Object[][] {
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+			},
+			new String[] {
+				"Nome", "Data", "Inicio", "Finaliza\u00E7\u00E3o", "Pontos"
+			}
+		));*/
+		
 		JLabel label = new JLabel("SENAI EDUCANDO");
 		label.setForeground(Color.LIGHT_GRAY);
 		label.setFont(new Font("Bebas Neue", Font.PLAIN, 54));
 		label.setBounds(77, 4, 344, 66);
 		contentPane.add(label);
+		
+		tableModel_2.addColumn("");
 		
 		JLabel label_10 = new JLabel("");
 		label_10.setBounds(-18, -21, 152, 118);
