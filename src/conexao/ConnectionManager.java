@@ -1,4 +1,4 @@
-package Conexao;
+package conexao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -20,7 +20,7 @@ public class ConnectionManager {
 	// Senha para o usuario do bando de dados
 	private static final String PASS_BANCO = "";
 	// Url de conexao para o banco de dados
-	private static final String CONN = "jdbc:mysql://localhost:3306/COOPERATIVA";
+	private static final String CONN = "jdbc:mysql://localhost:3306/sesa";
 
 	public static ConnectionManager getInstance() {
 		if (cm == null) {
