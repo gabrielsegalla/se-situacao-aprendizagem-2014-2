@@ -7,7 +7,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * @author senai
+ * @author Gabriel Segalla
  */
 public class ConnectionManager {
 
