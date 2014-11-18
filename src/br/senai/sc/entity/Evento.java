@@ -29,7 +29,7 @@ public class Evento implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(unique=true, nullable=false)
-	public int getId() {
+	public Integer getId() {
 		return this.id;
 	}
 

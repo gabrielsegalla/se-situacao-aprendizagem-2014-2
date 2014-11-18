@@ -7,11 +7,11 @@ public class Main {
 
 	public static void main(String[] args) {
 		Usuario usuario = new Usuario();
-		usuario.setCpf("000.000.000-00");
-		usuario.setNome("Gabriel");
+		usuario.setCpf("000.000.500-00");
+		usuario.setNome("dhjsadsg");
 		usuario.setTpUsuario("Aluno");
-		usuario.setLogin("login");
-		usuario.setSenha("senha");
+		usuario.setLogin("loggin");
+		usuario.setSenha("senfha");
 		
 		UsuarioDao dao = new UsuarioDao();
 		dao.salvar(usuario);
