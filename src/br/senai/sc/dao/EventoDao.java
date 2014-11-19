@@ -31,15 +31,15 @@ public class EventoDao {
 			entityManager.getTransaction().commit();
 		} catch (Exception e) {
 			entityManager.getTransaction().rollback();
-			Logger.getLogger(EventoDao.class.getName()).log(Level.SEVERE,
-					null, e);
+			Logger.getLogger(EventoDao.class.getName()).log(Level.SEVERE, null,
+					e);
 		}
 		entityManager.close();
 		return evento;
 
 	}
-	
-	public void remover(int id){
+
+	public void remover(int id) {
 		try {
 			entityManager.getTransaction().begin();
 			Evento evento = entityManager.getReference(Evento.class, id);
@@ -47,27 +47,26 @@ public class EventoDao {
 			entityManager.getTransaction().commit();
 		} catch (Exception e) {
 			entityManager.getTransaction().rollback();
-			Logger.getLogger(EventoDao.class.getName()).log(Level.SEVERE, null, e);
+			Logger.getLogger(EventoDao.class.getName()).log(Level.SEVERE, null,
+					e);
 		}
 		entityManager.close();
 	}
-	
+
 	public List<Usuario> listar() {
-		Query query = entityManager.createQuery("From Evento", Evento.class);
+		 Query query = entityManager.createQuery("From Evento", Evento.class);
 		return query.getResultList();
 	}
-	
+
 	public Evento buscarPorId(int id) {
 		return entityManager.find(Evento.class, id);
 	}
-	
+
 	public List<Evento> buscarPorNome(String nome) {
 		Query query = entityManager.createQuery(
 				"From Evento u where u.nome LIKE :nome", Evento.class);
 		query.setParameter("nome", nome);
 		return query.getResultList();
 	}
-	
-	
 
 }
