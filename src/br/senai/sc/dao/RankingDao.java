@@ -26,7 +26,7 @@ public class RankingDao {
 		Query query = entityManager.createQuery(
 				"From Ranking u where u.nome LIKE :nome", Ranking.class);
 		query.setParameter("nome", nome);
-		return query.getResultList();
+		 return query.getResultList();
 	}
 
 }

@@ -50,7 +50,7 @@ public class EventoDao {
 			Logger.getLogger(EventoDao.class.getName()).log(Level.SEVERE, null,
 					e);
 		}
-		entityManager.close();
+		 entityManager.close();
 	}
 
 	public List<Usuario> listar() {
