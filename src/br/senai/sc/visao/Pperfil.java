@@ -1792,18 +1792,17 @@ public class Pperfil extends JFrame {
 		JLabel label_1 = new JLabel("SENAI EDUCANDO");
 		label_1.setForeground(Color.WHITE);
 		label_1.setFont(new Font("Bebas Neue", Font.PLAIN, 54));
-		label_1.setBounds(77, 11, 344, 66);
+		label_1.setBounds(10, -4, 344, 66);
 		contentPane.add(label_1);
 		
 		JLabel label = new JLabel("");
-		label.setIcon(new ImageIcon("C:\\Users\\Gabriel Segalla\\Desktop\\Senai\\se-situacao-aprendizagem-2014-2\\resources\\Imagens\\P.ICON.png"));
-		label.setBounds(-20, 0, 112, 78);
+		label.setBounds(0, -22, 681, 550);
 		contentPane.add(label);
+		label.setIcon(new ImageIcon("C:\\Users\\Gabriel Segalla\\Desktop\\Senai\\se-situacao-aprendizagem-2014-2\\resources\\Imagens\\NEW 1.jpg"));
 		
-				JLabel label_3 = new JLabel("");
-				label_3.setIcon(new ImageIcon("C:\\Users\\Gabriel Segalla\\Desktop\\Senai\\se-situacao-aprendizagem-2014-2\\resources\\Imagens\\plano de Fundo.jpg"));
-				label_3.setBounds(-8, -19, 726, 550);
-				contentPane.add(label_3);
+		JLabel label_3 = new JLabel("");
+		label_3.setBounds(19, 30, 46, 14);
+		contentPane.add(label_3);
 
 	}
 }
