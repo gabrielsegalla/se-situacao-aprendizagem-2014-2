@@ -1,6 +1,7 @@
 package br.senai.sc.entity;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -28,6 +29,8 @@ public class Usuario implements Serializable {
 	private String nome;
 	private String senha;
 	private String tpUsuario;
+	private Integer pontosu;
+	private Date dataNasc;
 	private List<Ranking> rankings;
 
 	public Usuario() {
@@ -69,6 +72,26 @@ public class Usuario implements Serializable {
 
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+
+	public Integer getPontosu() {
+		return pontosu;
+	}
+
+	public void setPontosu(Integer pontosu) {
+		this.pontosu = pontosu;
+	}
+
+	public Date getDataNasc() {
+		return dataNasc;
+	}
+
+	public void setDataNasc(Date dataNasc) {
+		this.dataNasc = dataNasc;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	@Column(length = 45)
@@ -113,4 +136,7 @@ public class Usuario implements Serializable {
 		return ranking;
 	}
 
+	public void login(String login, int senha) {
+
+	}
 }

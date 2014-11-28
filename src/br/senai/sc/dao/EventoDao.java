@@ -53,7 +53,7 @@ public class EventoDao {
 		 entityManager.close();
 	}
 
-	public List<Usuario> listar() {
+	public List<Evento> listar() {
 		 Query query = entityManager.createQuery("From Evento", Evento.class);
 		return query.getResultList();
 	}

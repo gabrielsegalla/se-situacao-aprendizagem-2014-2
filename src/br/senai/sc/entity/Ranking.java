@@ -1,7 +1,17 @@
 package br.senai.sc.entity;
 
 import java.io.Serializable;
-import javax.persistence.*;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
 
 
 /**
@@ -14,9 +24,9 @@ import javax.persistence.*;
 public class Ranking implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private int id;
-	private Usuario usuario;
-	private Evento evento;
-
+	private Evento idEvento;
+	private Usuario idUsuario;
+	
 	public Ranking() {
 	}
 
@@ -37,23 +47,23 @@ public class Ranking implements Serializable {
 	@ManyToOne
 	@JoinColumn(name="idUsuario", nullable=false)
 	public Usuario getUsuario() {
-		return this.usuario;
+		return this.idUsuario;
 	}
 
 	public void setUsuario(Usuario usuario) {
-		this.usuario = usuario;
+		this.idUsuario = usuario;
 	}
 
 
 	//bi-directional many-to-one association to Evento
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.PERSIST)
 	@JoinColumn(name="idEvento", nullable=false)
 	public Evento getEvento() {
-		return this.evento;
+		return this.idEvento;
 	}
 
 	public void setEvento(Evento evento) {
-		this.evento = evento;
+		this.idEvento = evento;
 	}
 
 }

@@ -16,8 +16,8 @@ import java.util.List;
 public class Evento implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private int id;
-	private Date dtFim;
-	private Date dtIncio;
+	private Date data;
+	private String horario;
 	private String nome;
 	private int ponto;
 	private List<Ranking> rankings;
@@ -38,25 +38,23 @@ public class Evento implements Serializable {
 	}
 
 
-	@Temporal(TemporalType.DATE)
-	@Column(nullable=false)
-	public Date getDtFim() {
-		return this.dtFim;
-	}
-
-	public void setDtFim(Date dtFim) {
-		this.dtFim = dtFim;
+	public Date getData() {
+		return data;
 	}
 
 
-	@Temporal(TemporalType.DATE)
-	@Column(nullable=false)
-	public Date getDtIncio() {
-		return this.dtIncio;
+	public void setData(Date data) {
+		this.data = data;
 	}
 
-	public void setDtIncio(Date dtIncio) {
-		this.dtIncio = dtIncio;
+
+	public String getHorario() {
+		return horario;
+	}
+
+
+	public void setHorario(String horario) {
+		this.horario = horario;
 	}
 
 
