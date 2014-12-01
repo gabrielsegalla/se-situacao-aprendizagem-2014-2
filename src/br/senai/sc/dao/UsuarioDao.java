@@ -73,5 +73,10 @@ public class UsuarioDao {
 		query.setParameter("cpf", cpf);
 		return (Usuario) query.getSingleResult();
 	}
+	
+	public List<Usuario> buscarRanking(){
+		Query query = entityManager.createQuery("From Usuario order by pontosu DESC ", Usuario.class);
+		return query.getResultList();
+	}
 
 }

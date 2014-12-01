@@ -102,5 +102,9 @@ public class Evento implements Serializable {
 
 		return ranking;
 	}
+	
+	public String toString(){
+		return getNome();
+	}
 
 }

@@ -7,6 +7,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
@@ -23,6 +25,8 @@ import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.text.MaskFormatter;
+
+
 
 
 import br.senai.sc.controle.EventoControle;
@@ -65,21 +69,28 @@ public class Pperfil extends JFrame {
 	EventoControle evcontrole;
 	EventoDao edao;
 	private JTable table;
-	private JTextField textField_5;
-	private JTextField textField_6;
+	public JTextField idUsuario;
 	private JTable table_1;
 	private JTextField nomechave;
 	private JTextField textField_8;
 	private JTable table_2;
-	private DefaultTableModel tableModel = new DefaultTableModel();
+	private DefaultTableModel tableModel_1 = new DefaultTableModel();
+	private DefaultTableModel tableModel_2 = new DefaultTableModel();
+	private DefaultTableModel tableModel_3 = new DefaultTableModel();
+	private JPanel panel;
+	List<Evento> eventooos = new ArrayList<Evento>();
+	private JComboBox comboEventos;
 	/**
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
+				
 				try {
-					Pperfil frame = new Pperfil();
+					Instancia instancia = new Instancia();
+					Pperfil frame = instancia.getInstancia();
+
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -92,6 +103,9 @@ public class Pperfil extends JFrame {
 	 * Create the frame.
 	 */
 	public Pperfil() {
+		udao = new UsuarioDao();
+		edao = new EventoDao();
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 700, 550);
 		contentPane = new JPanel();
@@ -176,7 +190,7 @@ public class Pperfil extends JFrame {
 		button_1.setBounds(567, 365, 89, 23);
 		panel_1.add(button_1);
 
-		JPanel panel = new JPanel();
+		panel = new JPanel();
 		panel.setToolTipText("Perfil");
 		tabbedPane.addTab("Ranking", null, panel, null);
 		panel.setLayout(null);
@@ -218,14 +232,32 @@ public class Pperfil extends JFrame {
 		panel.add(scrollPane_2);
 		
 		table_2 = new JTable();
-		table_2.setModel(tableModel);
-		tableModel.addColumn("Nome");
-		tableModel.addColumn("Data");
-		tableModel.addColumn("Horario");
+		table_2.setModel(tableModel_2);
+		tableModel_2.addColumn("Posição");
+		tableModel_2.addColumn("Nome");
+		tableModel_2.addColumn("Pontos:");
 		table_2.getColumnModel().getColumn(0).setPreferredWidth(225);
 		table_2.getColumnModel().getColumn(1).setPreferredWidth(111);
 		table_2.getColumnModel().getColumn(2).setPreferredWidth(51);
 		scrollPane_2.setViewportView(table_2);
+		
+		JButton btnAtualizar = new JButton("Atualizar");
+		btnAtualizar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				UsuarioDao daoU = new UsuarioDao();
+				List<Usuario> usuarios = new ArrayList<Usuario>();
+				usuarios = daoU.buscarRanking();
+				int i = 1;
+				limpar2();
+				for(Usuario usuario2 : usuarios){
+					tableModel_2.addRow((new Object[]{i,usuario2.getNome(),usuario2.getPontosu()}));
+					i = i+1;
+				}
+				
+			}
+		});
+		btnAtualizar.setBounds(565, 28, 91, 23);
+		panel.add(btnAtualizar);
 
 		JPanel panel_2 = new JPanel();
 		tabbedPane.addTab("Eventos", null, panel_2, null);
@@ -241,113 +273,12 @@ public class Pperfil extends JFrame {
 		panel_2.add(scrollPane_1);
 		
 		table_1 = new JTable();
-		table_1.setModel(new DefaultTableModel(
-			new Object[][] {
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-			},
-			new String[] {
-				"Nome", "Data", "Horario", "Pontos"
-			}
-		));
+		tableModel_3.addColumn("id");
+		tableModel_3.addColumn("Data");
+		tableModel_3.addColumn("Horário");
+		tableModel_3.addColumn("Evento:");
+		tableModel_3.addColumn("Pontos");
+		table_1.setModel(tableModel_3);
 		scrollPane_1.setViewportView(table_1);
 		
 		JLabel lblBuscarPorNome = new JLabel("Buscar por Nome:");
@@ -384,11 +315,11 @@ public class Pperfil extends JFrame {
 		
 		JButton btnListarTodos = new JButton("Listar Todos");
 		btnListarTodos.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {	
-				
+			public void actionPerformed(ActionEvent arg0) {
+				listarTodos();
 			}
 		});
-		btnListarTodos.setBounds(497, 34, 144, 23);
+		btnListarTodos.setBounds(497, 36, 142, 23);
 		panel_2.add(btnListarTodos);
 
 		JPanel panel_3 = new JPanel();
@@ -429,7 +360,7 @@ public class Pperfil extends JFrame {
 
 		MaskFormatter maskdata = null;
 		try {
-			maskdata = new MaskFormatter(" ## / ## / ####");
+			maskdata = new MaskFormatter(" ##/##/####");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -544,9 +475,9 @@ public class Pperfil extends JFrame {
 		tabbedPane.addTab("Cadastro de Pontos", null, panel_4, null);
 		panel_4.setLayout(null);
 
-		JComboBox comboBox_2 = new JComboBox();
-		comboBox_2.setBounds(10, 89, 198, 20);
-		panel_4.add(comboBox_2);
+		comboEventos = new JComboBox();
+		comboEventos.setBounds(10, 89, 222, 20);
+		panel_4.add(comboEventos);
 
 		JLabel lblEvento = new JLabel("Evento:");
 		lblEvento.setFont(new Font("Bebas Neue", Font.PLAIN, 23));
@@ -567,145 +498,34 @@ public class Pperfil extends JFrame {
 		panel_4.add(scrollPane);
 		
 		table = new JTable();
-		table.setModel(new DefaultTableModel(
-			new Object[][] {
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-			},
-			new String[] {
-				"Nome", "Tipo de Pessoa", "Pontos", "Horario"
-			}
-		));
-		table.getColumnModel().getColumn(0).setPreferredWidth(161);
-		table.getColumnModel().getColumn(1).setPreferredWidth(93);
-		table.getColumnModel().getColumn(3).setPreferredWidth(151);
+		table.setModel(tableModel_1);
+		
 		scrollPane.setViewportView(table);
 		
-		textField_5 = new JTextField();
-		textField_5.setBounds(218, 89, 156, 20);
-		panel_4.add(textField_5);
-		textField_5.setColumns(10);
+		idUsuario = new JTextField();
+		idUsuario.setEnabled(false);
+		idUsuario.setBounds(376, 89, 181, 20);
+		panel_4.add(idUsuario);
+		idUsuario.setColumns(10);
 		
-		JLabel lblCpf = new JLabel("CPF:");
+		JLabel lblCpf = new JLabel("Codigo aluno:");
 		lblCpf.setFont(new Font("Bebas Neue", Font.PLAIN, 23));
-		lblCpf.setBounds(217, 64, 84, 20);
+		lblCpf.setBounds(375, 64, 144, 20);
 		panel_4.add(lblCpf);
 		
-		JButton button_5 = new JButton("...............................");
-		button_5.setBounds(370, 89, 16, 20);
-		panel_4.add(button_5);
+		JButton btnBuscar_1 = new JButton("Buscar");
+		btnBuscar_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				ListarUsuarios usua = new ListarUsuarios();
+				usua.setVisible(true);
+			}
+		});
+		btnBuscar_1.setBounds(567, 90, 89, 20);
+		panel_4.add(btnBuscar_1);
 		
-		textField_6 = new JTextField();
-		textField_6.setBounds(401, 89, 206, 20);
-		panel_4.add(textField_6);
-		textField_6.setColumns(10);
-		
-		JLabel lblData = new JLabel("Data:");
-		lblData.setFont(new Font("Bebas Neue", Font.PLAIN, 23));
-		lblData.setBounds(401, 64, 84, 20);
-		panel_4.add(lblData);
-		
-		JButton button_6 = new JButton("...............................");
-		button_6.setBounds(605, 88, 16, 20);
-		panel_4.add(button_6);
+		JButton btnAtualizar_1 = new JButton("Atualizar");
+		btnAtualizar_1.setBounds(242, 88, 91, 23);
+		panel_4.add(btnAtualizar_1);
 
 		JPanel panel_5 = new JPanel();
 		tabbedPane.addTab("Cadastro de Evento", null, panel_5, null);
@@ -802,9 +622,6 @@ public class Pperfil extends JFrame {
 		dtevento.setBounds(10, 147, 222, 20);
 		panel_5.add(dtevento);
 
-		tableModel.addColumn("Nome");
-		tableModel.addColumn("Pontos");
-		tableModel.addColumn("Posição");
 
 		
 		JLabel label_1 = new JLabel("SENAI EDUCANDO");
@@ -823,4 +640,36 @@ public class Pperfil extends JFrame {
 		contentPane.add(label_3);
 
 	}
+	
+	public void limpar2(){
+		while(tableModel_2.getRowCount()>0){
+			tableModel_2.removeRow(0);
+		}
+	}
+	
+	public void limpar3(){
+		while(tableModel_3.getRowCount()>0){
+			tableModel_3.removeRow(0);
+		}
+	}
+	
+	public void listarTodos(){
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");	
+		eventooos = edao.listar();
+		limpar3();
+		for (Evento evento: eventooos){
+			String data = sdf.format(evento.getData());
+			tableModel_3.addRow(new Object[] {evento.getId(),data,evento.getHorario(),evento.getNome(),evento.getPonto()});
+		}
+	}
+	
+	public void listarTodosCombo(){
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");	
+		eventooos = edao.listar();
+		limpar3();
+		for (Evento evento: eventooos){
+			comboEventos.addItem(evento);
+		}
+	}
+	
 }
