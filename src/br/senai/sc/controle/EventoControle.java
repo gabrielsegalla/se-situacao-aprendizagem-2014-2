@@ -4,6 +4,7 @@ import java.util.List;
 
 import br.senai.sc.dao.EventoDao;
 import br.senai.sc.entity.Evento;
+import br.senai.sc.entity.Ranking;
 
 /**
  * @author gabriel segalla
@@ -12,6 +13,7 @@ import br.senai.sc.entity.Evento;
 
 public class EventoControle {
 
+	Ranking ranking;
 	Evento evento;
 	EventoDao eventoDao;
 
