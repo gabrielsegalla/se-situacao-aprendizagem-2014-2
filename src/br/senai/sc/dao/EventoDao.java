@@ -1,5 +1,6 @@
 package br.senai.sc.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -8,7 +9,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
 import br.senai.sc.entity.Evento;
-import br.senai.sc.entity.Usuario;
 import br.senai.sc.utils.JpaUtils;
 
 public class EventoDao {
@@ -68,5 +68,23 @@ public class EventoDao {
 		query.setParameter("nome", nome);
 		return query.getResultList();
 	}
+	public List<Evento> findAll(){
+		EntityManager em = getEntityManager();
+		List <Evento> eventos;
+		try{
+		Query q = em.createNamedQuery("Evento.findAll");
+		eventos = q.getResultList();
+		}catch (Exception e) {
+		eventos = new ArrayList();
+		}finally{
+		em.close();
+		}
+		return eventos;
+		}
 
+	private EntityManager getEntityManager() {
+		
+		return entityManager;
+	}
+		
 }

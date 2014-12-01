@@ -55,7 +55,7 @@ public class TelaLogin extends JFrame {
 		setType(Type.UTILITY);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setTitle("LOGIN - SENAI EDUCANDO");
-		setBounds(100, 100, 500,500);
+		setBounds(100, 100, 500, 500);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -80,6 +80,7 @@ public class TelaLogin extends JFrame {
 		JButton btnConectar = new JButton("Conectar");
 		btnConectar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+
 			}
 		});
 		btnConectar
@@ -96,14 +97,15 @@ public class TelaLogin extends JFrame {
 								.getResource("/com/sun/java/swing/plaf/motif/icons/Error.gif")));
 		btnCancelar.setBounds(296, 414, 105, 23);
 		contentPane.add(btnCancelar);
-		
+
 		passwordField = new JPasswordField();
 		passwordField.setBackground(new Color(46, 139, 87));
 		passwordField.setBounds(111, 371, 290, 20);
 		contentPane.add(passwordField);
-		
+
 		label = new JLabel("");
-		label.setIcon(new ImageIcon("C:\\Users\\Gabriel Segalla\\Desktop\\Senai\\se-situacao-aprendizagem-2014-2\\resources\\Imagens\\new login.jpg"));
+		label.setIcon(new ImageIcon(
+				"C:\\Users\\Gabriel Segalla\\Desktop\\Senai\\se-situacao-aprendizagem-2014-2\\resources\\Imagens\\new login.jpg"));
 		label.setBounds(0, 0, 484, 461);
 		contentPane.add(label);
 	}
