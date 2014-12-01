@@ -26,9 +26,6 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.text.MaskFormatter;
 
-
-
-
 import br.senai.sc.controle.EventoControle;
 import br.senai.sc.controle.UsuarioControle;
 import br.senai.sc.dao.EventoDao;
@@ -80,13 +77,14 @@ public class Pperfil extends JFrame {
 	private JPanel panel;
 	List<Evento> eventooos = new ArrayList<Evento>();
 	private JComboBox comboEventos;
+
 	/**
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
-				
+
 				try {
 					Instancia instancia = new Instancia();
 					Pperfil frame = instancia.getInstancia();
@@ -105,14 +103,14 @@ public class Pperfil extends JFrame {
 	public Pperfil() {
 		udao = new UsuarioDao();
 		edao = new EventoDao();
-		
+
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 700, 550);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
+
 		JLabel lblSair = new JLabel("Sair");
 		lblSair.addMouseListener(new MouseAdapter() {
 			@Override
@@ -120,11 +118,12 @@ public class Pperfil extends JFrame {
 				TelaLogin telalogin = new TelaLogin();
 				telalogin.setVisible(true);
 				dispose();
-				
-				
+
 			}
 		});
-		lblSair.setIcon(new ImageIcon(Pperfil.class.getResource("/javax/swing/plaf/metal/icons/ocean/paletteClose-pressed.gif")));
+		lblSair.setIcon(new ImageIcon(
+				Pperfil.class
+						.getResource("/javax/swing/plaf/metal/icons/ocean/paletteClose-pressed.gif")));
 		lblSair.setBounds(628, 30, 46, 14);
 		contentPane.add(lblSair);
 
@@ -189,75 +188,9 @@ public class Pperfil extends JFrame {
 		JButton button_1 = new JButton("Salvar");
 		button_1.setBounds(567, 365, 89, 23);
 		panel_1.add(button_1);
-
-		panel = new JPanel();
-		panel.setToolTipText("Perfil");
-		tabbedPane.addTab("Ranking", null, panel, null);
-		panel.setLayout(null);
-
-		JLabel label_5 = new JLabel("Nome:");
-		label_5.setBounds(174, 335, 46, 14);
-		panel.add(label_5);
-
-		textField_1 = new JTextField();
-		textField_1.setColumns(10);
-		textField_1.setBounds(221, 334, 181, 20);
-		panel.add(textField_1);
-
-		JButton button_2 = new JButton("Procurar");
-		button_2.setBounds(423, 331, 114, 23);
-		panel.add(button_2);
-
-		JLabel label_11 = new JLabel("Ranking");
-		label_11.setForeground(Color.BLACK);
-		label_11.setFont(new Font("Bebas Neue", Font.PLAIN, 47));
-		label_11.setBounds(10, 11, 271, 51);
-		panel.add(label_11);
-		
-		JLabel lblCpf_1 = new JLabel("CPF:");
-		lblCpf_1.setBounds(174, 369, 46, 14);
-		panel.add(lblCpf_1);
-		
-		textField_8 = new JTextField();
-		textField_8.setColumns(10);
-		textField_8.setBounds(221, 368, 181, 20);
-		panel.add(textField_8);
-		
-		JButton button_7 = new JButton("Procurar");
-		button_7.setBounds(423, 365, 114, 23);
-		panel.add(button_7);
-		
-		JScrollPane scrollPane_2 = new JScrollPane();
-		scrollPane_2.setBounds(10, 62, 646, 261);
-		panel.add(scrollPane_2);
-		
-		table_2 = new JTable();
-		table_2.setModel(tableModel_2);
 		tableModel_2.addColumn("Posição");
 		tableModel_2.addColumn("Nome");
 		tableModel_2.addColumn("Pontos:");
-		table_2.getColumnModel().getColumn(0).setPreferredWidth(225);
-		table_2.getColumnModel().getColumn(1).setPreferredWidth(111);
-		table_2.getColumnModel().getColumn(2).setPreferredWidth(51);
-		scrollPane_2.setViewportView(table_2);
-		
-		JButton btnAtualizar = new JButton("Atualizar");
-		btnAtualizar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				UsuarioDao daoU = new UsuarioDao();
-				List<Usuario> usuarios = new ArrayList<Usuario>();
-				usuarios = daoU.buscarRanking();
-				int i = 1;
-				limpar2();
-				for(Usuario usuario2 : usuarios){
-					tableModel_2.addRow((new Object[]{i,usuario2.getNome(),usuario2.getPontosu()}));
-					i = i+1;
-				}
-				
-			}
-		});
-		btnAtualizar.setBounds(565, 28, 91, 23);
-		panel.add(btnAtualizar);
 
 		JPanel panel_2 = new JPanel();
 		tabbedPane.addTab("Eventos", null, panel_2, null);
@@ -267,11 +200,11 @@ public class Pperfil extends JFrame {
 		label_13.setFont(new Font("Bebas Neue", Font.PLAIN, 47));
 		label_13.setBounds(10, 11, 142, 44);
 		panel_2.add(label_13);
-		
+
 		JScrollPane scrollPane_1 = new JScrollPane();
 		scrollPane_1.setBounds(10, 66, 631, 272);
 		panel_2.add(scrollPane_1);
-		
+
 		table_1 = new JTable();
 		tableModel_3.addColumn("id");
 		tableModel_3.addColumn("Data");
@@ -280,39 +213,39 @@ public class Pperfil extends JFrame {
 		tableModel_3.addColumn("Pontos");
 		table_1.setModel(tableModel_3);
 		scrollPane_1.setViewportView(table_1);
-		
+
 		JLabel lblBuscarPorNome = new JLabel("Buscar por Nome:");
 		lblBuscarPorNome.setFont(new Font("Bebas Neue", Font.PLAIN, 27));
 		lblBuscarPorNome.setBounds(10, 357, 178, 27);
 		panel_2.add(lblBuscarPorNome);
-		
+
 		nomechave = new JTextField();
 		nomechave.setBounds(183, 357, 304, 20);
 		panel_2.add(nomechave);
 		nomechave.setColumns(10);
-		
+
 		JButton btnBuscar = new JButton("Buscar");
 		btnBuscar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				String palavra = nomechave.getText();
-		//		if(comboBusca.getSelectedIndex() == 1 && palavra ==null){
-			//		salaC.buscarPorLocalizacao(palavra);
-			//	}
-			//	if(comboBusca.getSelectedIndex() == 2 && palavra ==null){
-			//		salaC.buscarPorTipo(palavra);
-			//	}
-			//	if(comboBusca.getSelectedIndex() == 3 && palavra ==null){
-			//		salaC.buscarPorSala(palavra);
-			//	}
-			//	if(comboBusca.getSelectedIndex() == 4 && palavra ==null){
-			//		salaC.buscarPorLugares(palavra);
-				}
-				
-		//	}
+				// if(comboBusca.getSelectedIndex() == 1 && palavra ==null){
+				// salaC.buscarPorLocalizacao(palavra);
+				// }
+				// if(comboBusca.getSelectedIndex() == 2 && palavra ==null){
+				// salaC.buscarPorTipo(palavra);
+				// }
+				// if(comboBusca.getSelectedIndex() == 3 && palavra ==null){
+				// salaC.buscarPorSala(palavra);
+				// }
+				// if(comboBusca.getSelectedIndex() == 4 && palavra ==null){
+				// salaC.buscarPorLugares(palavra);
+			}
+
+			// }
 		});
 		btnBuscar.setBounds(497, 357, 89, 23);
 		panel_2.add(btnBuscar);
-		
+
 		JButton btnListarTodos = new JButton("Listar Todos");
 		btnListarTodos.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -471,6 +404,63 @@ public class Pperfil extends JFrame {
 		pontosu.setBounds(189, 161, 138, 20);
 		panel_3.add(pontosu);
 
+		panel = new JPanel();
+		panel.setToolTipText("Perfil");
+		tabbedPane.addTab("Ranking", null, panel, null);
+		panel.setLayout(null);
+
+		JLabel label_5 = new JLabel("Nome:");
+		label_5.setBounds(174, 335, 46, 14);
+		panel.add(label_5);
+
+		textField_1 = new JTextField();
+		textField_1.setColumns(10);
+		textField_1.setBounds(221, 334, 181, 20);
+		panel.add(textField_1);
+
+		JButton button_2 = new JButton("Procurar");
+		button_2.setBounds(423, 331, 114, 23);
+		panel.add(button_2);
+
+		JLabel label_11 = new JLabel("Ranking");
+		label_11.setForeground(Color.BLACK);
+		label_11.setFont(new Font("Bebas Neue", Font.PLAIN, 47));
+		label_11.setBounds(10, 11, 271, 51);
+		panel.add(label_11);
+
+	
+
+		JScrollPane scrollPane_2 = new JScrollPane();
+		scrollPane_2.setBounds(10, 62, 646, 261);
+		panel.add(scrollPane_2);
+
+		table_2 = new JTable();
+		table_2.setModel(tableModel_2);
+		table_2.getColumnModel().getColumn(0).setPreferredWidth(10);
+		table_2.getColumnModel().getColumn(0).setResizable(true);
+		table_2.getColumnModel().getColumn(1).setPreferredWidth(111);
+		table_2.getColumnModel().getColumn(2).setPreferredWidth(51);
+		scrollPane_2.setViewportView(table_2);
+
+		JButton btnAtualizar = new JButton("Atualizar");
+		btnAtualizar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				UsuarioDao daoU = new UsuarioDao();
+				List<Usuario> usuarios = new ArrayList<Usuario>();
+				usuarios = daoU.buscarRanking();
+				int i = 1;
+				limpar2();
+				for (Usuario usuario2 : usuarios) {
+					tableModel_2.addRow((new Object[] { i, usuario2.getNome(),
+							usuario2.getPontosu() }));
+					i = i + 1;
+				}
+
+			}
+		});
+		btnAtualizar.setBounds(565, 28, 91, 23);
+		panel.add(btnAtualizar);
+
 		JPanel panel_4 = new JPanel();
 		tabbedPane.addTab("Cadastro de Pontos", null, panel_4, null);
 		panel_4.setLayout(null);
@@ -492,27 +482,27 @@ public class Pperfil extends JFrame {
 		lblCadastroDePontos.setFont(new Font("Bebas Neue", Font.PLAIN, 47));
 		lblCadastroDePontos.setBounds(10, 11, 376, 39);
 		panel_4.add(lblCadastroDePontos);
-		
+
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(10, 128, 646, 221);
 		panel_4.add(scrollPane);
-		
+
 		table = new JTable();
 		table.setModel(tableModel_1);
-		
+
 		scrollPane.setViewportView(table);
-		
+
 		idUsuario = new JTextField();
 		idUsuario.setEnabled(false);
 		idUsuario.setBounds(376, 89, 181, 20);
 		panel_4.add(idUsuario);
 		idUsuario.setColumns(10);
-		
+
 		JLabel lblCpf = new JLabel("Codigo aluno:");
 		lblCpf.setFont(new Font("Bebas Neue", Font.PLAIN, 23));
 		lblCpf.setBounds(375, 64, 144, 20);
 		panel_4.add(lblCpf);
-		
+
 		JButton btnBuscar_1 = new JButton("Buscar");
 		btnBuscar_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -522,7 +512,7 @@ public class Pperfil extends JFrame {
 		});
 		btnBuscar_1.setBounds(567, 90, 89, 20);
 		panel_4.add(btnBuscar_1);
-		
+
 		JButton btnAtualizar_1 = new JButton("Atualizar");
 		btnAtualizar_1.setBounds(242, 88, 91, 23);
 		panel_4.add(btnAtualizar_1);
@@ -576,8 +566,8 @@ public class Pperfil extends JFrame {
 				evento.setHorario((String) cbhevento.getSelectedItem());
 				Integer eqtPontos = Integer.parseInt(qtPontose.getText());
 				evento.setPonto(eqtPontos);
-  evcontrole = new EventoControle();
-  edao = new EventoDao();
+				evcontrole = new EventoControle();
+				edao = new EventoDao();
 				try {
 					evento.setData(sdf.parse(dtevento.getText()));
 					evcontrole.salvar(evento);
@@ -622,54 +612,54 @@ public class Pperfil extends JFrame {
 		dtevento.setBounds(10, 147, 222, 20);
 		panel_5.add(dtevento);
 
-
-		
 		JLabel label_1 = new JLabel("SENAI EDUCANDO");
 		label_1.setForeground(Color.WHITE);
 		label_1.setFont(new Font("Bebas Neue", Font.PLAIN, 54));
 		label_1.setBounds(10, -4, 344, 66);
 		contentPane.add(label_1);
-		
+
 		JLabel label = new JLabel("");
 		label.setBounds(0, -22, 681, 550);
 		contentPane.add(label);
-		label.setIcon(new ImageIcon("C:\\Users\\Gabriel Segalla\\Desktop\\Senai\\se-situacao-aprendizagem-2014-2\\resources\\Imagens\\NEW 1.jpg"));
-		
+		label.setIcon(new ImageIcon(
+				"C:\\Users\\Gabriel Segalla\\Desktop\\Senai\\se-situacao-aprendizagem-2014-2\\resources\\Imagens\\NEW 1.jpg"));
+
 		JLabel label_3 = new JLabel("");
 		label_3.setBounds(19, 30, 46, 14);
 		contentPane.add(label_3);
 
 	}
-	
-	public void limpar2(){
-		while(tableModel_2.getRowCount()>0){
+
+	public void limpar2() {
+		while (tableModel_2.getRowCount() > 0) {
 			tableModel_2.removeRow(0);
 		}
 	}
-	
-	public void limpar3(){
-		while(tableModel_3.getRowCount()>0){
+
+	public void limpar3() {
+		while (tableModel_3.getRowCount() > 0) {
 			tableModel_3.removeRow(0);
 		}
 	}
-	
-	public void listarTodos(){
-		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");	
+
+	public void listarTodos() {
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 		eventooos = edao.listar();
 		limpar3();
-		for (Evento evento: eventooos){
+		for (Evento evento : eventooos) {
 			String data = sdf.format(evento.getData());
-			tableModel_3.addRow(new Object[] {evento.getId(),data,evento.getHorario(),evento.getNome(),evento.getPonto()});
+			tableModel_3.addRow(new Object[] { evento.getId(), data,
+					evento.getHorario(), evento.getNome(), evento.getPonto() });
 		}
 	}
-	
-	public void listarTodosCombo(){
-		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");	
+
+	public void listarTodosCombo() {
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 		eventooos = edao.listar();
 		limpar3();
-		for (Evento evento: eventooos){
+		for (Evento evento : eventooos) {
 			comboEventos.addItem(evento);
 		}
 	}
-	
+
 }
