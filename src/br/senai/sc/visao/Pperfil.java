@@ -806,14 +806,7 @@ public class Pperfil extends JFrame {
 		tableModel.addColumn("Pontos");
 		tableModel.addColumn("Posição");
 
-		tableModel_1.addColumn("Nome");
-		tableModel_1.addColumn("Data");
-		tableModel_1.addColumn("Inicio");
-		tableModel_1.addColumn("Finalizacão");
-		tableModel_1.addColumn("Pontos");
-
-		tableModel_2.addColumn("");
-
+		
 		JLabel label_1 = new JLabel("SENAI EDUCANDO");
 		label_1.setForeground(Color.WHITE);
 		label_1.setFont(new Font("Bebas Neue", Font.PLAIN, 54));
