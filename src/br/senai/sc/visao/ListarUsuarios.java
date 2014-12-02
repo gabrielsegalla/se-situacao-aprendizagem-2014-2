@@ -87,6 +87,8 @@ public class ListarUsuarios extends JFrame {
 								+ tableModel.getValueAt(indice, 1));
 				Instancia instancia = new Instancia();
 				instancia.getInstancia().idUsuario.setText(getId());
+				instancia.getInstancia().botaoAdiconar.setVisible(true);
+				instancia.getInstancia().botaoBuscar.setVisible(false);
 				dispose();
 			}
 		});

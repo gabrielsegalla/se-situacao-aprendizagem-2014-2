@@ -77,6 +77,8 @@ public class Pperfil extends JFrame {
 	private JPanel panel;
 	List<Evento> eventooos = new ArrayList<Evento>();
 	private JComboBox comboEventos;
+	public JButton botaoBuscar;
+	public JButton botaoAdiconar;
 
 	/**
 	 * Launch the application.
@@ -475,6 +477,21 @@ public class Pperfil extends JFrame {
 		panel_4.add(lblEvento);
 
 		JButton btnFinalizar = new JButton("Finalizar");
+		btnFinalizar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Evento evento = (Evento)comboEventos.getSelectedItem();
+				int pontos = evento.getPonto();
+				while (tableModel_1.getRowCount() > 0) {
+					int indice = 0;
+					Usuario usuario = udao.buscarPorId(Integer.parseInt((String.valueOf(tableModel_1.getValueAt(indice, 0)))));
+					usuario.setPontosu(usuario.getPontosu()+pontos);
+					udao.salvar(usuario);
+					tableModel_1.removeRow(0);
+					
+				}
+				
+			}
+		});
 		btnFinalizar.setBounds(567, 365, 89, 23);
 		panel_4.add(btnFinalizar);
 
@@ -489,7 +506,6 @@ public class Pperfil extends JFrame {
 
 		table = new JTable();
 		table.setModel(tableModel_1);
-
 		scrollPane.setViewportView(table);
 
 		idUsuario = new JTextField();
@@ -503,19 +519,31 @@ public class Pperfil extends JFrame {
 		lblCpf.setBounds(375, 64, 144, 20);
 		panel_4.add(lblCpf);
 
-		JButton btnBuscar_1 = new JButton("Buscar");
-		btnBuscar_1.addActionListener(new ActionListener() {
+		botaoBuscar = new JButton("Buscar");
+		botaoBuscar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				ListarUsuarios usua = new ListarUsuarios();
 				usua.setVisible(true);
 			}
 		});
-		btnBuscar_1.setBounds(567, 90, 89, 20);
-		panel_4.add(btnBuscar_1);
+		botaoBuscar.setBounds(567, 89, 89, 20);
+		panel_4.add(botaoBuscar);
 
 		JButton btnAtualizar_1 = new JButton("Atualizar");
 		btnAtualizar_1.setBounds(242, 88, 91, 23);
 		panel_4.add(btnAtualizar_1);
+		
+		botaoAdiconar = new JButton("Adicionar");
+		botaoAdiconar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Usuario usu = udao.buscarPorId(Integer.parseInt(idUsuario.getText()));
+				tableModel_1.addRow(new Object[] {usu.getId(), usu.getNome(),usu.getCpf(),usu.getPontosu()});
+				idUsuario.setText("");
+			}
+		});
+		botaoAdiconar.setBounds(567, 88, 89, 23);
+		panel_4.add(botaoAdiconar);
+		botaoAdiconar.setVisible(false);
 
 		JPanel panel_5 = new JPanel();
 		tabbedPane.addTab("Cadastro de Evento", null, panel_5, null);
