@@ -113,21 +113,7 @@ public class Pperfil extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		JLabel lblSair = new JLabel("Sair");
-		lblSair.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent arg0) {
-				TelaLogin telalogin = new TelaLogin();
-				telalogin.setVisible(true);
-				dispose();
-
-			}
-		});
-		lblSair.setIcon(new ImageIcon(
-				Pperfil.class
-						.getResource("/javax/swing/plaf/metal/icons/ocean/paletteClose-pressed.gif")));
-		lblSair.setBounds(628, 30, 46, 14);
-		contentPane.add(lblSair);
+		
 
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		tabbedPane.setBounds(10, 73, 671, 427);
@@ -139,8 +125,8 @@ public class Pperfil extends JFrame {
 		panel_1.setLayout(null);
 
 		JLabel label_2 = new JLabel("Meu Perfil");
-		label_2.setFont(new Font("Bebas Neue", Font.PLAIN, 47));
-		label_2.setBounds(10, 11, 178, 34);
+		label_2.setFont(new Font("BankGothic Md BT", Font.PLAIN, 47));
+		label_2.setBounds(10, 11, 357, 34);
 		panel_1.add(label_2);
 
 		JLabel label_4 = new JLabel("Nome:");
@@ -199,8 +185,8 @@ public class Pperfil extends JFrame {
 		panel_2.setLayout(null);
 
 		JLabel label_13 = new JLabel("EVENTOS");
-		label_13.setFont(new Font("Bebas Neue", Font.PLAIN, 47));
-		label_13.setBounds(10, 11, 142, 44);
+		label_13.setFont(new Font("BankGothic Md BT", Font.PLAIN, 47));
+		label_13.setBounds(10, 11, 326, 44);
 		panel_2.add(label_13);
 
 		JScrollPane scrollPane_1 = new JScrollPane();
@@ -262,8 +248,8 @@ public class Pperfil extends JFrame {
 		panel_3.setLayout(null);
 
 		JLabel lblCadastroDeAluno = new JLabel("Cadastro de Pessoa\r\n");
-		lblCadastroDeAluno.setFont(new Font("Bebas Neue", Font.PLAIN, 47));
-		lblCadastroDeAluno.setBounds(10, 11, 376, 39);
+		lblCadastroDeAluno.setFont(new Font("BankGothic Md BT", Font.PLAIN, 47));
+		lblCadastroDeAluno.setBounds(10, 11, 624, 39);
 		panel_3.add(lblCadastroDeAluno);
 
 		JLabel label_17 = new JLabel("Nome:");
@@ -426,7 +412,7 @@ public class Pperfil extends JFrame {
 
 		JLabel label_11 = new JLabel("Ranking");
 		label_11.setForeground(Color.BLACK);
-		label_11.setFont(new Font("Bebas Neue", Font.PLAIN, 47));
+		label_11.setFont(new Font("BankGothic Md BT", Font.PLAIN, 47));
 		label_11.setBounds(10, 11, 271, 51);
 		panel.add(label_11);
 
@@ -496,8 +482,8 @@ public class Pperfil extends JFrame {
 		panel_4.add(btnFinalizar);
 
 		JLabel lblCadastroDePontos = new JLabel("Cadastro de Pontos");
-		lblCadastroDePontos.setFont(new Font("Bebas Neue", Font.PLAIN, 47));
-		lblCadastroDePontos.setBounds(10, 11, 376, 39);
+		lblCadastroDePontos.setFont(new Font("BankGothic Md BT", Font.PLAIN, 47));
+		lblCadastroDePontos.setBounds(10, 11, 592, 39);
 		panel_4.add(lblCadastroDePontos);
 
 		JScrollPane scrollPane = new JScrollPane();
@@ -621,8 +607,8 @@ public class Pperfil extends JFrame {
 		panel_5.add(cbhevento);
 
 		JLabel lblCadastroDeEvento = new JLabel("Cadastro de Evento");
-		lblCadastroDeEvento.setFont(new Font("Bebas Neue", Font.PLAIN, 47));
-		lblCadastroDeEvento.setBounds(10, 11, 376, 39);
+		lblCadastroDeEvento.setFont(new Font("BankGothic Md BT", Font.PLAIN, 47));
+		lblCadastroDeEvento.setBounds(10, 11, 589, 39);
 		panel_5.add(lblCadastroDeEvento);
 
 		JLabel lblqtpontos = new JLabel("Quantidade de Pontos");
@@ -639,22 +625,37 @@ public class Pperfil extends JFrame {
 		dtevento.setColumns(10);
 		dtevento.setBounds(10, 147, 222, 20);
 		panel_5.add(dtevento);
+		
+		JButton btnSair = new JButton("Sair");
+		btnSair.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+					TelaLogin telalogin = new TelaLogin();
+					telalogin.setVisible(true);
+					dispose();
+			}
+		});
+		btnSair.setBounds(603, 21, 68, 23);
+		contentPane.add(btnSair);
 
 		JLabel label_1 = new JLabel("SENAI EDUCANDO");
 		label_1.setForeground(Color.WHITE);
-		label_1.setFont(new Font("Bebas Neue", Font.PLAIN, 54));
-		label_1.setBounds(10, -4, 344, 66);
+		label_1.setFont(new Font("BankGothic Md BT", Font.PLAIN, 54));
+		label_1.setBounds(10, 0, 595, 66);
 		contentPane.add(label_1);
 
 		JLabel label = new JLabel("");
 		label.setBounds(0, -22, 681, 550);
 		contentPane.add(label);
-		label.setIcon(new ImageIcon(
-				"C:\\Users\\Gabriel Segalla\\Desktop\\Senai\\se-situacao-aprendizagem-2014-2\\resources\\Imagens\\NEW 1.jpg"));
+		label.setIcon(new ImageIcon("C:\\Users\\gabriel_segalla\\git\\se-situacao-aprendizagem-2014-2\\resources\\Imagens\\NEW 1.jpg"));
 
 		JLabel label_3 = new JLabel("");
 		label_3.setBounds(19, 30, 46, 14);
 		contentPane.add(label_3);
+		
+		JLabel label_7 = new JLabel("");
+		label_7.setIcon(new ImageIcon("C:\\Users\\gabriel_segalla\\git\\se-situacao-aprendizagem-2014-2\\resources\\Imagens\\NEW P.ICON.png"));
+		label_7.setBounds(23, 30, 46, 14);
+		contentPane.add(label_7);
 
 	}
 
@@ -689,5 +690,4 @@ public class Pperfil extends JFrame {
 			comboEventos.addItem(evento);
 		}
 	}
-
 }

@@ -55,7 +55,7 @@ public class TelaLogin extends JFrame {
 		setType(Type.UTILITY);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setTitle("LOGIN - SENAI EDUCANDO");
-		setBounds(100, 100, 500, 500);
+		setBounds(100, 100, 489, 481);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -104,8 +104,7 @@ public class TelaLogin extends JFrame {
 		contentPane.add(passwordField);
 
 		label = new JLabel("");
-		label.setIcon(new ImageIcon(
-				"C:\\Users\\Gabriel Segalla\\Desktop\\Senai\\se-situacao-aprendizagem-2014-2\\resources\\Imagens\\new login.jpg"));
+		label.setIcon(new ImageIcon("C:\\Users\\gabriel_segalla\\git\\se-situacao-aprendizagem-2014-2\\resources\\Imagens\\new login.jpg"));
 		label.setBounds(0, 0, 484, 461);
 		contentPane.add(label);
 	}
